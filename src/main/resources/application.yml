@@ -1,0 +1,23 @@
+server:
+  port: 8084
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring-boot-security-jwt
+    username: root
+    password: root@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format-sql: true
+    hibernate:
+      #create, create-drop, update, none
+      ddl-auto: update
+
+    show-sql: true
+
+jwt:
+  header: Authorization
+  secret: 'lb39X69xCa'

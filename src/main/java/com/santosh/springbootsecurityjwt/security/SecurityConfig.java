@@ -40,7 +40,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 new AntPathRequestMatcher("/rest/**")
                 , new AntPathRequestMatcher("/api/**")
         ), tokenAuthManager());
-        filter.setAuthenticationManager(authenticationManager());
         filter.setAuthenticationSuccessHandler(new AuthSuccessHandler());
         filter.setAuthenticationFailureHandler(new AuthFailureHandler());
         return filter;
@@ -49,7 +48,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public BasicAuthFilter basicAuthTokenFilter() {
         BasicAuthFilter filter = new BasicAuthFilter(new AntPathRequestMatcher("/system/**")
                 , basicAuthManager());
-        filter.setAuthenticationManager(authenticationManager());
         filter.setAuthenticationSuccessHandler(new AuthSuccessHandler());
         filter.setAuthenticationFailureHandler(new AuthFailureHandler());
         return filter;
